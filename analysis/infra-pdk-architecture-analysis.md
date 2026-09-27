@@ -219,8 +219,8 @@ classDiagram
     }
 
     AIChangelogGenerator ..> AgentModel : createLLMClient()
-    AIChangelogGenerator ..> "utils/prompts" : buildChangelogPrompt()
-    ReleaseBranchManager ..> "utils/git" : branch / checkout 封装
+    AIChangelogGenerator ..> `utils/prompts` : buildChangelogPrompt()
+    ReleaseBranchManager ..> `utils/git` : branch / checkout 封装
 
     PDKConfig *-- CoreOptions
     PDKConfig *-- AIOptions
