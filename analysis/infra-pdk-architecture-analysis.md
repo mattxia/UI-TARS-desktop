@@ -151,6 +151,9 @@ classDiagram
         +baseURL?: string
     }
 
+    class UtilsPrompts["utils/prompts"]
+    class UtilsGit["utils/git"]
+
     class PDKConfig {
         <<interface 聚合以下全部>>
     }
@@ -219,8 +222,8 @@ classDiagram
     }
 
     AIChangelogGenerator ..> AgentModel : createLLMClient()
-    AIChangelogGenerator ..> `utils/prompts` : buildChangelogPrompt()
-    ReleaseBranchManager ..> `utils/git` : branch / checkout 封装
+    AIChangelogGenerator ..> UtilsPrompts : buildChangelogPrompt()
+    ReleaseBranchManager ..> UtilsGit : branch / checkout 封装
 
     PDKConfig *-- CoreOptions
     PDKConfig *-- AIOptions
